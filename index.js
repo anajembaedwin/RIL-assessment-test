@@ -1,10 +1,13 @@
+//get the ID properties from index.html (const is used because their variables won't change)
 const button = document.getElementById("clickMe")
 const square = document.getElementById("circle")
 const box = document.getElementById("box")
 
+//Instantiate button (use let to initialize because their variables will change later)
 let switched = false
 
-button.addEventListener("click", () => {
+//add EventListener to button
+button.addEventListener("click", function() {
 	if (switched) {
 		circle.style.backgroundColor = "#fff"
 		box.style.backgroundColor = "#000"
@@ -16,5 +19,6 @@ button.addEventListener("click", () => {
 		box.style.borderWidth = "1px"
 	}
 
+	//This ensures the reverse of the function fires when the button is clicked again
 	switched = !switched
 })
